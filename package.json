@@ -1,0 +1,19 @@
+{
+  "name": "groweasy-ai-csv-importer",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently \"npm run dev --workspace apps/api\" \"npm run dev --workspace apps/web\"",
+    "build": "npm run build --workspace apps/api && npm run build --workspace apps/web",
+    "start": "concurrently \"npm run start --workspace apps/api\" \"npm run start --workspace apps/web\"",
+    "lint": "npm run lint --workspace apps/api && npm run lint --workspace apps/web",
+    "test": "npm run test --workspace apps/api"
+  },
+  "workspaces": [
+    "apps/*"
+  ],
+  "devDependencies": {
+    "concurrently": "^9.1.2",
+    "typescript": "^5.7.3"
+  }
+}
