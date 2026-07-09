@@ -50,7 +50,7 @@ const crmColumns: (keyof CrmRecord)[] = [
   "description"
 ];
 
-const apiUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:4000";
+const apiUrl = process.env.NEXT_PUBLIC_API_URL ?? (process.env.NODE_ENV === "production" ? "" : "http://localhost:4000");
 
 export default function Home() {
   const inputRef = useRef<HTMLInputElement>(null);
